@@ -1,0 +1,69 @@
+/** Check apa string pada parameter semua function adalah vowel 
+Bila semua ada vowel maka akan return true bila tidak, akan return false **/
+
+function checkAllVowel (str) {
+    //masukan code disini
+    // Check if str is string
+    if (typeof str != 'string') {
+        return false;
+    } else {
+        // Convert str value to lower case
+        str = str.toLowerCase();
+        // Check every str value
+        for (let index = 0; index < str.length; index++) {
+            // If vowel, continue to next loop and if not vowel, return false
+            if (str[index] == 'a' || str[index] == 'i' || str[index] == 'u' || str[index] == 'e' || str[index] == 'o') {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        // Return true if all value vowel
+        return true;
+    }
+}
+
+console.log(checkAllVowel('aaaaiiieeeue')); //true
+console.log(checkAllVowel('aasaoppppclskss')); //false
+
+/** Ubah string menjadi array yang dipisahkan dengan sebuah coma **/
+
+function strToArray(str){
+    // Check if str is string
+    if (typeof str != 'string') {
+        return false;
+    } else {
+        // Convert string to array by ","
+        const arrayString = str.split(",");
+        // Declare result variable
+        const result= [];
+        // Convert every index of arrayString to array
+        for (let index = 0; index < arrayString.length; index++) {
+            // Push it to result
+            result.push(arrayString[index].split(""));
+        }
+        // Return result
+        return result;
+    }
+}
+
+console.log(strToArray('qwer,tyui,asdf,ghjk'));
+/*
+[
+    ['q','w','e','r'],
+    ['t','y','u','i'],
+    ['a','s','d','f'],
+    ['g','h','j','k']
+]
+*/ 
+
+console.log(strToArray('aqrst,ukaei,ffooo'));
+/*
+[
+    ['a','q','r','s','t'],
+    ['u','k','a','e',s','i'],
+    ['f','f','o','o','o']
+]
+*/
+
+
